@@ -1,0 +1,38 @@
+<!--pages/tekken7/charactersMoveList.wxml-->
+
+<view class="table">
+	<view class="table-th-index">index</view>
+	<view class="table-th">move cmd</view>
+	<view class="table-th">move gif</view>
+	<!-- 注意嵌套的数组对象 -->
+
+
+	<block wx:for='{{characterMoveList}}' wx:key='id' wx:for-index='index'>
+    <view class="table-tr" data-cap="{{item}}">
+     <view class="table-td">
+        <text class="text" >{{item._id}}</text>
+      </view>
+      <view class="table-td" >
+        <image style="width:300rpx;max-height:170rpx" src="{{item.cmd_png_url}}" lazy-load="true" bindtap="showInfo" id="png" data-cap="{{item}}" mode='widthFix'></image>
+      </view>
+      <view class="table-td" >
+        <image  style="width:300rpx;max-height:170rpx" src="{{item.cmd_gif_url}}" lazy-load="true" bindtap="showInfo" id="gif" data-cap="{{item}}" mode='widthFix'></image>
+      </view>
+    </view>
+	</block>
+
+ <modal title="{{cmdName}}" hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel">
+  <!-- <modal title="" hidden="{{modalHidden}}" showCancel="false"> -->
+    <view>
+      <!-- <image style="height:{{windowImgHeight}}" src="{{nowPic}}" mode='aspectFill'></image> -->
+      <image  src="{{nowPic}}" mode='widthFix'></image>
+       <text class="frameInfo">{{cmdInfo}}</text>
+       <!-- <text class="frameInfo">lksjdkj&emsp;&emsp;lkjsdlkjf</text> -->
+    </view>
+
+    <view></view>
+   
+  </modal>
+
+
+</view>

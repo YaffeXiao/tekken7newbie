@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<!--
+<view class="content">
+
+
+	<view class="t1" bindtap="iconclick" wx:for="{{charactersList}}" wx:key="key">
+			<view class="link" bindtap="iconclick" id="{{item.character_name}}" url="/pages/tekken7/charactersMoveList/charactersMoveList?name={{item.character_name}}" open-type="navigate">
+				 <navigator  class="link" url="/pages/tekken7/charactersMoveList" open-type="navigate"> 
+			<image style="width:{{ image.width }}rpx; height:{{ image.height }}rpx;" class="character-image" src="{{item.pic_url}}"></image>
+
+	</view>
+</view>
+-->
+<view class="table">
+<!-- <view class="table-th">move cmd</view>
+	<view class="table-th">move gif</view> 
+	<view class="table-th">move gif</view> 
+	<view class="table-th">move gif</view> 
+	<view class="table-th">move gif</view>  -->
+	<!-- 注意嵌套的数组对象 -->
+<block wx:for='{{charactersList}}' wx:key='id' wx:for-index="index">
+	<view class="table-tr" bindtap="showInfo" >
+		<view class="table-td" wx:for='{{item}}' wx:key='id2' bindtap="iconclick" id="{{item.character_name}}">
+			<image class="character-image" src="{{item.pic_url}}"></image>
+		</view>
+	</view>
+</block>
+</view>

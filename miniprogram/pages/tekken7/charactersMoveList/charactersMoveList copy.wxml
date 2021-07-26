@@ -1,0 +1,17 @@
+<!--pages/tekken7/charactersMoveList.wxml-->
+
+<view class="table">
+  <block wx:for='{{threeArray}}' wx:key='*this' wx:for-item='oneArray'>
+<!-- 注意嵌套的数组对象 -->
+    <view class="table-tr" wx:if='{{index<1}}'>
+      <block wx:for='{{oneArray}}' wx:key='id'>
+        <view class="table-th">{{item.name}}</view>
+      </block>
+    </view>
+    <view class="table-tr" wx:else>
+      <block wx:for='{{oneArray}}' wx:key='id'>
+        <view class="table-td"><image class="gif" src="https://t1.picb.cc/uploads/2020/07/30/tNBYsw.gif"></image></view>
+      </block>
+    </view>
+  </block>
+</view>

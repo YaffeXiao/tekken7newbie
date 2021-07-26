@@ -1,0 +1,90 @@
+/**index.wxss**/
+.t11{
+  height: 100%;
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  flex-wrap:nowrap;
+}
+.t22{
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  flex-wrap:nowrap;
+}
+
+.character-view{
+  height: 75px;
+  width: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  flex-wrap:nowrap;
+  margin-bottom:40px; 
+  border: 5px;
+  border-color:#751818;
+  background-color: #000000;
+
+}
+
+
+.character-image{
+  /* left: 0em; */
+  height: 100px;
+  width: 66px;
+  /* width: auto; */
+}
+
+.version-num{
+  font-size: small;
+  border-style:solid;
+  border-color:#ff0000;
+}
+
+.content {
+  display: flex; 
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 750rpx;
+  margin: 0 auto; 
+  position: relative;
+  left: 5rpx; 
+}
+ 
+.t1{
+  width: 20%;
+  background: red;
+  border: 1rpx solid black;
+}
+
+
+.table {
+  display: table;
+  width: 100%;
+  /* border-collapse 属性设置表格的边框是否被合并为一个单一的边框，解决相邻单元格边框未合并导致有些边框变粗的视觉效果 */
+  /* border-collapse: collapse; */
+  overflow-x: hidden;
+}
+
+.table-tr {
+  display: table-row;
+  width: 100%;
+  height: 200rpx;
+}
+
+.table-th {
+  display: table-cell;
+  font-weight: bold;
+  /* border: 1px solid black; */
+  text-align: center;
+  vertical-align: middle;
+  background-color: #ccc;
+}
+
+.table-td {
+  display: table-cell;
+  /* border: 1px solid black; */
+  text-align: center;
+  vertical-align: middle;
+}
