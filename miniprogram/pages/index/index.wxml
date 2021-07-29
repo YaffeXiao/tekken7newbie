@@ -11,6 +11,7 @@
 	</view>
 </view>
 -->
+
 <view class="table">
 <!-- <view class="table-th">move cmd</view>
 	<view class="table-th">move gif</view> 
@@ -26,3 +27,9 @@
 	</view>
 </block>
 </view>
+<!-- <text></text>
+<text>\n</text>
+<view style="heigth:100px;"></view>
+<view>
+	<button class="button" >Test</button>
+</view> -->

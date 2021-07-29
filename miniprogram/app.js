@@ -13,6 +13,20 @@ App({
         traceUser: true,
       })
     }
+    // wx.getSetting({
+    //   success (res){
+    //     if (res.authSetting['scope.openId']) {
+    //       // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+    //       wx.getUserInfo({
+    //         success: function(res) {
+    //           console.log(res.userInfo)
+    //         }
+    //       })
+    //     }else{
+    //       console.info("未授权");
+    //     }
+    //   }
+    // })
 
     this.globalData = {}
   }

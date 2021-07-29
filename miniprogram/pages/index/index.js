@@ -24,7 +24,7 @@ Page({
   onReady: function (options) {
 
       // this.getData();
-      console.info(characterDataset.length);
+      //console.info(characterDataset.length);
       // this.setCharacterDatas();
       // console.info(options.get('share'));
       if(characterDataset.length == 0){
@@ -34,9 +34,31 @@ Page({
       }
   },
   onShow: function (options) {
-
-  
-
+    //console.info("收集用户数据");
+    wx.getUserInfo({
+      success: function(res) {
+        // console.log(res.userInfo);
+        const db = wx.cloud.database();
+      //   db.collection('tk_fans').where()
+        let userInfo = res.userInfo;
+        let tkFansDao = db.collection('tk_fans');
+        tkFansDao.where({"nickName":userInfo.nickName, "avatarUrl":userInfo.avatarUrl }).count({
+          success: function(res) {
+            // console.log(res);
+            if (res.total == 0){
+              tkFansDao.add({
+                data: userInfo,
+                success: function(res) {
+                  // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
+                  console.log(res);
+                }
+              });
+            }
+          }
+        });
+      }
+    })
+    
 
   },
   iconclick:function(event){
